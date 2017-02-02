@@ -9,17 +9,14 @@ public class Teleport : Script
     {
         if (player.isInVehicle)
         {
-
-            API.sendChatMessageToPlayer(sender, "Teleporting to " + player.name);
             API.setPlayerIntoVehicle(sender, player.vehicle.handle, -2);
-
         }
         else
         {
-            API.sendChatMessageToPlayer(sender, "Teleporting to " + player.name);
             API.setEntityPosition(sender.handle, API.getEntityPosition(player.handle));
         }
-
+        
+        API.sendChatMessageToPlayer(sender, "Teleporting to " + player.name);
     }
 }
 
